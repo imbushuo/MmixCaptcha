@@ -12,6 +12,7 @@ class HTMLMmixCaptchaWidgetField extends HTMLFormField {
      */
 	public function __construct( array $params ) {
 		parent::__construct( $params );
+        $this->mName = "captchaWord";
 	}
 
 	public function getInputHTML( $value ) {
@@ -62,7 +63,7 @@ class HTMLMmixCaptchaWidgetField extends HTMLFormField {
                         <div class="mmix-captcha-ui-control-information-text">
                             {$description}
                         </div>
-                        <input class="mmix-captcha-ui-control-input" name="wpCaptchaWordA" autocomplete="off" type="text" placeholder="{$placeHolder}" required tabindex="6">
+                        <input class="mmix-captcha-ui-control-input" name="captchaWord" autocomplete="off" type="text" placeholder="{$placeHolder}" required tabindex="6">
                     </div>
                 </div>
             </div>

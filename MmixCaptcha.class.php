@@ -149,11 +149,11 @@ HTML;
             'label-message' => null
 		] + $formDescriptor['captchaId'];
 
-		$formDescriptor['captchaInfo'] = [
+        $formDescriptor['captchaInfo']['label-message'] = null;
+
+		$formDescriptor['captchaWord'] = [
 			'class' => HTMLMmixCaptchaWidgetField::class,
             'label-message' => null
 		];
-
-		$formDescriptor['captchaWord']['label-message'] = null;
 	}
 }
