@@ -1,0 +1,25 @@
+{
+	"name": "Project Mmix Captcha Provider Extension",
+	"version": "1612.1222.1105.3000",
+  "author": [
+    "[https://lmn.cat The Little Moe New LLC]"
+  ],
+	"MessagesDirs": {
+		"MmixCaptcha": [
+			"i18n"
+		]
+	},
+  "AutoloadClasses": {
+    "MmixCaptcha": "MmixCaptcha.class.php",
+    "ChallengeResponse": "MmixCaptcha.DataObjects.php",
+    "Connector": "MmixCaptcha.Connector.php",
+    "HTMLMmixCaptchaField": "HTMLMmixCaptchaField.php",
+    "HTMLMmixCaptchaWidgetField": "HTMLMmixCaptchaWidgetField.php"
+  },
+  "config": {
+    "CaptchaClass": "MmixCaptcha",
+    "CaptchaQuestions": [],
+    "MmixBackendEndpoint": "mmixlaxtpsprd1.moegirlpedia.moetransit.com"
+  },
+	"manifest_version": 1
+}
