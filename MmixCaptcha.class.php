@@ -47,7 +47,7 @@ class MmixCaptcha extends SimpleCaptcha {
 		];
 	}
 
-	function getFormInformation( $tabIndex = 1 ) {
+    function generateForm() {
         $errorTitle = wfMessage( 'mmixcaptcha-error' )->text();
         $errorContent = wfMessage( 'mmixcaptcha-retry' )->text();
         $placeHolder = wfMessage( 'mmixcaptcha-textplaceholder' )->text();
@@ -91,8 +91,16 @@ class MmixCaptcha extends SimpleCaptcha {
     </div>
 HTML;
 
+        return $content;
+    }
+
+    function getForm( OutputPage $out, $tabIndex = 1 ) {
+        return $this->generateForm();
+    }
+
+	function getFormInformation( $tabIndex = 1 ) {
 		return [
-			'html' => $content
+			'html' => $this->generateForm()
 		];
 	}
 
