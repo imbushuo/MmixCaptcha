@@ -1,6 +1,6 @@
 {
-  "name": "Project Mmix Captcha Provider Extension",
-  "version": "1612.1222.1140.3300",
+  "name": "Project MMIX Captcha Provider Extension",
+  "version": "1612.1222.1213.3400",
   "author": [
     "[https://lmn.cat The Little Moe New LLC]"
   ],
@@ -19,7 +19,7 @@
   "config": {
     "CaptchaClass": "MmixCaptcha",
     "CaptchaQuestions": [],
-    "MmixBackendEndpoint": "mmixlaxtpsprd1.moegirlpedia.moetransit.com"
+    "MmixBackendEndpoint": ""
   },
   "manifest_version": 1
 }
