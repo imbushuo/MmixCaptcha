@@ -33,11 +33,21 @@ class MmixCaptcha extends SimpleCaptcha {
     }
 
 	function addCaptchaAPI( &$resultArr ) {
-		$captcha = $this->getCaptcha();
-		$index = $this->storeCaptcha( $captcha );
-		$resultArr['captcha'] = $this->describeCaptchaType();
-		$resultArr['captcha']['id'] = $index;
-		$resultArr['captcha']['questionId'] = $captcha['questionId'];
+        $captcha = Connector::getChallenge();
+        global $wgMmixBackendEndpoint;
+
+        if ($captcha) {
+            $resultArr['captcha'] = $this->describeCaptchaType();
+            $resultArr['captcha']['id'] = $captcha->id;
+            $resultArr['captcha']['captchaId'] = $captcha->id;
+            $resultArr['captcha']['questionId'] = $captcha->id;
+
+            $imageIdEncoded = urlencode($captcha->id);
+            $description = wfMessage( 'mmixcaptcha-edit' )->parse();
+            $imageUrl = "https://{$wgMmixBackendEndpoint}/image/Retrieval?id={$imageIdEncoded}";
+
+            $resultArr['captcha']['question'] = "<p>{$description}</p><img style=\"display: block;\" src=\"{$imageUrl}\" alt=\"MMIX Captcha\" />";
+        }
 	}
 
 	public function describeCaptchaType() {
