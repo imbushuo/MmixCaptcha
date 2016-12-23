@@ -28,8 +28,29 @@ class MmixCaptcha extends SimpleCaptcha {
 	 * @return bool if passed, false if failed or new session
 	 */
 	protected function passCaptcha( $index, $word ) {
+        if ( !$index || $index == "") {
+            return false;
+        }
+        if ( !$word || $word == "") {
+            return false;
+        }
+        
+        // API and Mobile will fire twice. Each key can be used twice.
+        global $wgRequest;
+        $pCounterData = $wgRequest->getSessionData("$index.$word");
+        if ( $pCounterData == 1 ) {
+            $wgRequest->setSessionData("$index.$word", null);
+            return true;
+        }
+
         // Validate with backend.
-		return Connector::validateChallenge( $index, $word );
+        $result = Connector::validateChallenge( $index, $word );
+        if ( $result ) {
+            // Save + counter
+            $wgRequest->setSessionData("$index.$word", 1);
+        }
+
+        return $result;
     }
 
 	function addCaptchaAPI( &$resultArr ) {
