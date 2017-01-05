@@ -19,17 +19,13 @@ class HTMLMmixCaptchaWidgetField extends HTMLFormField {
 		$out = $this->mParent->getOutput();
 		$lang = htmlspecialchars( urlencode( $this->mParent->getLanguage()->getCode() ) );
 
-		$out->addHeadItem(
-			'mmix-dedicatedjquery',
-			"<script type=\"text/javascript\" src=\"//code.jquery.com/jquery-3.1.1.min.js\" ></script>"
-		);
         $out->addHeadItem(
 			'mmix-coremodule',
-			"<script type=\"text/javascript\" src=\"//mmixstaticassets.azureedge.net/MMIXMIN.77CF50A99DA1A3FC94AE37D09CBEF5E8FC45978A69FEE6C23BB37DD16D2B7089.js\" async defer></script>"
+			"<script type=\"text/javascript\" src=\"//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.js\" async defer></script>"
 		);
         $out->addHeadItem(
             'mmix-corestylesheet',
-            "<link rel=\"stylesheet\" href=\"//mmixstaticassets.azureedge.net/MMIXMIN.68E1DB244A9483F4D64D086304A4F8F92966074EB3DCC0AAC38415E4A4EAC874.css\" />"
+            "<link rel=\"stylesheet\" href=\"//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.css\" />"
         );
 
         $errorTitle = wfMessage( 'mmixcaptcha-error' )->text();

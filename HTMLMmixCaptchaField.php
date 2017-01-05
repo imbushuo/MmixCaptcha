@@ -26,10 +26,6 @@ class HTMLMmixCaptchaField extends HTMLFormField {
 		$out = $this->mParent->getOutput();
 		$lang = htmlspecialchars( urlencode( $this->mParent->getLanguage()->getCode() ) );
 
-		// Insert reCAPTCHA script, in display language, if available.
-		// Language falls back to the browser's display language.
-		// See https://developers.google.com/recaptcha/docs/faq
-
 		$output = Html::element( 'div', [
 			'class' => [
 				'mw-confirmedit-captcha-fail' => !!$this->error,

@@ -34,7 +34,7 @@ class MmixCaptcha extends SimpleCaptcha {
         if ( !$word || $word == "") {
             return false;
         }
-        
+
         // API and Mobile will fire twice. Each key can be used twice.
         global $wgRequest;
         $pCounterData = $wgRequest->getSessionData("$index.$word");
@@ -86,7 +86,7 @@ class MmixCaptcha extends SimpleCaptcha {
 
         $content = <<<HTML
     <div>
-        <link rel="stylesheet" href="//mmixstaticassets.azureedge.net/MMIXMIN.68E1DB244A9483F4D64D086304A4F8F92966074EB3DCC0AAC38415E4A4EAC874.css" />
+        <link rel="stylesheet" href="//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.css" />
         <img id="mmix-global-captcha-progress-ring" src="//mmixstaticassets.azureedge.net/ProgressRing.gif" width="50" />
         <div class="mmix-captcha-container" id="mmix-captcha-container-1">
             <input id="wpCaptchaId" name="wpCaptchaId" type="hidden" value="" >
@@ -112,13 +112,12 @@ class MmixCaptcha extends SimpleCaptcha {
                         <div class="mmix-captcha-ui-control-information-text">
                             {$description}
                         </div>
-                        <input class="mmix-captcha-ui-control-input" autocomplete="off" name="wpCaptchaWord" type="text" placeholder="{$placeHolder}" required >
+                        <input class="mmix-captcha-ui-control-input" autocomplete="off" name="wpCaptchaWord" type="text" placeholder="{$placeHolder}">
                     </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
-        <script src="//mmixstaticassets.azureedge.net/MMIXMIN.77CF50A99DA1A3FC94AE37D09CBEF5E8FC45978A69FEE6C23BB37DD16D2B7089.js" async defer></script>
+        <script src="//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.js" async defer></script>
     </div>
 HTML;
 
@@ -142,8 +141,6 @@ HTML;
 	}
 
     public function storeCaptcha( $info ) {
-		// ReCaptcha is stored by Google; the ID will be generated at that time as well, and
-		// the one returned here won't be used. Just pretend this worked.
 		return 'not used';
 	}
 

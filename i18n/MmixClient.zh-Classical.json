@@ -1,0 +1,8 @@
+﻿{
+  "requestThrottled": "閣下發送了太多的請求，請稍等片刻後再試（點擊此區域可以重試）。",
+  "refATmpl": "REF A: %s",
+  "refBTmpl": "REF B: %s",
+  "refCTmpl": "REF C: %s",
+  "localRequestThrottledToastTitle": "請稍等",
+  "localRequestThrottledToastContent": "閣下嘗試請求新的驗證碼的速度過快，請稍等片刻後再試。"
+}

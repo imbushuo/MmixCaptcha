@@ -1,0 +1,8 @@
+﻿{
+  "requestThrottled": "You may have sent too many requests. Calm down and try again later. (Click here for retry)",
+  "refATmpl": "REF A: %s",
+  "refBTmpl": "REF B: %s",
+  "refCTmpl": "REF C: %s",
+  "localRequestThrottledToastTitle": "Calm down",
+  "localRequestThrottledToastContent": "Please do not request new image too frequently - try again later."
+}
