@@ -21,11 +21,11 @@ class HTMLMmixCaptchaWidgetField extends HTMLFormField {
 
         $out->addHeadItem(
 			'mmix-coremodule',
-			"<script type=\"text/javascript\" src=\"/extensions/ConfirmEdit/MmixCaptcha/js/mmix.min.js\" async defer></script>"
+			"<script type=\"text/javascript\" src=\"//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.js\" async defer></script>"
 		);
         $out->addHeadItem(
             'mmix-corestylesheet',
-            "<link rel=\"stylesheet\" href=\"/extensions/ConfirmEdit/MmixCaptcha/css/mmix.min.css\" />"
+            "<link rel=\"stylesheet\" href=\"//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.css\" />"
         );
 
         $errorTitle = wfMessage( 'mmixcaptcha-error' )->text();
