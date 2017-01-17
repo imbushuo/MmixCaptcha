@@ -14,7 +14,7 @@ include_once "MmixCaptcha.DataObjects.php";
 
 class Connector {
 
-    public function getChallenge() {
+    public static function getChallenge() {
         global $wgMmixBackendEndpoint;
         $reqUrl = "https://{$wgMmixBackendEndpoint}/questionEntry/BeginChallenge";
 
@@ -43,7 +43,7 @@ class Connector {
         }
     }
 
-    public function validateChallenge( $id, $content ) {
+    public static function validateChallenge( $id, $content ) {
         global $wgMmixBackendEndpoint;
         $reqUrl = "https://{$wgMmixBackendEndpoint}/questionEntry/PostResponse";
 
