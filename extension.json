@@ -1,6 +1,6 @@
 {
   "name": "Project MMIX Captcha Provider Extension",
-  "version": "1701.117.1735.3600",
+  "version": "1701.117.1735.3610",
   "author": [
     "[https://lmn.cat The Little Moe New LLC]"
   ],
@@ -20,8 +20,8 @@
     "CaptchaClass": "MmixCaptcha",
     "CaptchaQuestions": [],
     "MmixBackendEndpoint": "",
-    "ClientResourceIdentifier": "a19c89cb",
-    "UseResourceManager": true
+    "ClientResourceIdentifier": "170117-1802",
+    "UseResourceManager": false
   },
   "ResourceModules": {
     "ext.mmixCaptcha": {

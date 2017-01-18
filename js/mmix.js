@@ -21,6 +21,13 @@
     $(document).ready(function () {
         console.log("[MMIX] Client is ready");
         console.log("[MMIX] Register events.");
+        
+        // Resolve traffic endpoint which will be used later
+        var endpoint = $(".mmix-host").data("endpoint");
+        if (!isNullOrEmpty(endpoint))
+        {
+            portalUrl = "https://" + endpoint + "/";
+        }
 
         // We will resolve client language using HTML tag because MediaWiki did so
         clientLang = $("html").prop("lang");
@@ -36,6 +43,12 @@
             loadImage();
         });
     });
+
+    // Utility to check string.
+    function isNullOrEmpty(str)
+    {
+        return (!str || 0 === str.length);
+    }
 
     // Method that loads localization resources.
     function initClientResource(language, callback) {
