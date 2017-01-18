@@ -1,0 +1,86 @@
+.mmix-captcha-container {
+    display: none;
+}
+
+.mmix-captcha-ui-container {
+    width: 470px;
+    height: 360px;
+    display: block;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.mmix-captcha-ui-container #mmix-captcha-progress-ring {
+    z-index: 2;
+    position: absolute;
+    left: 45%;
+    top: 40%;
+}
+
+.mmix-captcha-ui-container .mmix-captcha-ui-image-container {
+    border: none;
+    display:inline-block;
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 253px;
+    width: 450px;
+    background-color: #fff;
+}
+
+.mmix-captcha-ui-image-control {
+    height: 253px;
+    width: 450px;
+}
+
+.mmix-captcha-ui-fail-error-container {
+    height: 253px;
+    width: 450px;
+}
+
+.mmix-captcha-ui-fail-error-container .mmix-captcha-ui-fail-error-image {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mmix-captcha-ui-fail-error-container .mmix-captcha-ui-fail-error-text-container .error-title {
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.mmix-captcha-ui-fail-error-container .mmix-captcha-ui-fail-error-text-container .error-message {
+    font-size: 12px;
+    margin-top: 0px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.mmix-captcha-ui-control-information-text-container {
+    width: 95%;
+    font-size: 12px;
+    height: 32px;
+}
+
+.mmix-captcha-ui-control-information-text-container .mmix-captcha-ui-control-information-text {
+    padding-top: 30px;
+    margin-left: 10px;
+    height: 32px;
+}
+
+.mmix-captcha-ui-control-information-text-container .mmix-captcha-ui-control-input {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}

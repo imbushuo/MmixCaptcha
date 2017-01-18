@@ -23,15 +23,6 @@ class HTMLMmixCaptchaField extends HTMLFormField {
 	}
 
 	public function getInputHTML( $value ) {
-		$out = $this->mParent->getOutput();
-		$lang = htmlspecialchars( urlencode( $this->mParent->getLanguage()->getCode() ) );
-
-		$output = Html::element( 'div', [
-			'class' => [
-				'mw-confirmedit-captcha-fail' => !!$this->error,
-			]
-		] );
-
 		return '<input id="wpCaptchaId" name="wpCaptchaId" type="hidden" value="" >';
 	}
 }

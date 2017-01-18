@@ -1,6 +1,6 @@
 {
   "name": "Project MMIX Captcha Provider Extension",
-  "version": "1612.1222.1213.3403",
+  "version": "1701.117.1735.3600",
   "author": [
     "[https://lmn.cat The Little Moe New LLC]"
   ],
@@ -19,7 +19,22 @@
   "config": {
     "CaptchaClass": "MmixCaptcha",
     "CaptchaQuestions": [],
-    "MmixBackendEndpoint": ""
+    "MmixBackendEndpoint": "",
+    "ClientResourceIdentifier": "a19c89cb",
+    "UseResourceManager": true
+  },
+  "ResourceModules": {
+    "ext.mmixCaptcha": {
+      "scripts": [
+        "extensions/ConfirmEdit/MmixCaptcha/js/mmix.js"
+      ],
+      "styles": [
+        "extensions/ConfirmEdit/MmixCaptcha/css/mmix.min.css"
+      ],
+      "dependencies": [
+        "jquery"
+      ]
+    }
   },
   "manifest_version": 1
 }

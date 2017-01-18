@@ -79,14 +79,39 @@ class MmixCaptcha extends SimpleCaptcha {
 	}
 
     function generateForm() {
+        global $wgMmixBackendEndpoint, $wgUseResourceManager, $wgClientResourceIdentifier;
+        global $wgOut;
+        $out = $wgOut;
+
+        if (!isset($wgClientResourceIdentifier))
+        {
+            $wgClientResourceIdentifier = "";
+        }
+
+        if ($wgUseResourceManager)
+        {
+            $out->addModules("ext.mmixCaptcha");
+            $out->addModuleStyles("ext.mmixCaptcha");
+        }
+        else
+        {
+            $out->addHeadItem(
+			    'mmix-coremodule',
+			    "<script type=\"text/javascript\" src=\"//mmixstaticassets.azureedge.net/{$wgClientResourceIdentifier}/mmix.min.js\" async defer></script>"
+		    );
+            $out->addHeadItem(
+                'mmix-corestylesheet',
+                "<link rel=\"stylesheet\" href=\"//mmixstaticassets.azureedge.net/{$wgClientResourceIdentifier}/mmix.min.css\" />"
+            );
+        }
+
         $errorTitle = wfMessage( 'mmixcaptcha-error' )->text();
         $errorContent = wfMessage( 'mmixcaptcha-retry' )->text();
         $placeHolder = wfMessage( 'mmixcaptcha-textplaceholder' )->text();
         $description = wfMessage( 'mmixcaptcha-edit' )->parse();
 
         $content = <<<HTML
-    <div>
-        <link rel="stylesheet" href="//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.css" />
+    <div class="mmix-host" data-endpoint="{$wgMmixBackendEndpoint}">
         <img id="mmix-global-captcha-progress-ring" src="//mmixstaticassets.azureedge.net/ProgressRing.gif" width="50" />
         <div class="mmix-captcha-container" id="mmix-captcha-container-1">
             <input id="wpCaptchaId" name="wpCaptchaId" type="hidden" value="" >
@@ -117,7 +142,6 @@ class MmixCaptcha extends SimpleCaptcha {
                 </div>
             </div>
         </div>
-        <script src="//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.js" async defer></script>
     </div>
 HTML;
 

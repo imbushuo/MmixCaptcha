@@ -19,14 +19,29 @@ class HTMLMmixCaptchaWidgetField extends HTMLFormField {
 		$out = $this->mParent->getOutput();
 		$lang = htmlspecialchars( urlencode( $this->mParent->getLanguage()->getCode() ) );
 
-        $out->addHeadItem(
-			'mmix-coremodule',
-			"<script type=\"text/javascript\" src=\"//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.js\" async defer></script>"
-		);
-        $out->addHeadItem(
-            'mmix-corestylesheet',
-            "<link rel=\"stylesheet\" href=\"//mmixstaticassets.azureedge.net/a19c89cb/mmix.min.css\" />"
-        );
+        global $wgMmixBackendEndpoint, $wgUseResourceManager, $wgClientResourceIdentifier;
+
+        if (!isset($wgClientResourceIdentifier))
+        {
+            $wgClientResourceIdentifier = "";
+        }
+
+        if ($wgUseResourceManager)
+        {
+            $out->addModules("ext.mmixCaptcha");
+            $out->addModuleStyles("ext.mmixCaptcha");
+        }
+        else
+        {
+            $out->addHeadItem(
+			    'mmix-coremodule',
+			    "<script type=\"text/javascript\" src=\"//mmixstaticassets.azureedge.net/{$wgClientResourceIdentifier}/mmix.min.js\" async defer></script>"
+		    );
+            $out->addHeadItem(
+                'mmix-corestylesheet',
+                "<link rel=\"stylesheet\" href=\"//mmixstaticassets.azureedge.net/{$wgClientResourceIdentifier}/mmix.min.css\" />"
+            );
+        }
 
         $errorTitle = wfMessage( 'mmixcaptcha-error' )->text();
         $errorContent = wfMessage( 'mmixcaptcha-retry' )->text();
@@ -34,7 +49,7 @@ class HTMLMmixCaptchaWidgetField extends HTMLFormField {
         $description = wfMessage( 'mmixcaptcha-createaccount' )->parse();
 
 		$output = <<<HTML
-    <div>
+    <div class="mmix-host" data-lang="{$lang}" data-endpoint="{$wgMmixBackendEndpoint}">
         <img id="mmix-global-captcha-progress-ring" src="//mmixstaticassets.azureedge.net/ProgressRing.gif" width="50" />
         <div class="mmix-captcha-container" id="mmix-captcha-container-1">
             <input id="telemetryCorrelationId" name="telemetryCorrelationId" type="hidden" value="" >
