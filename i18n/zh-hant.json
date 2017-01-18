@@ -14,6 +14,6 @@
   "mmixcaptchahelp-text": "接受公眾貢獻者的網站，比如本wiki，經常受到使用自動工具添加垃圾網站鏈接的垃圾製造者的破壞。儘管這些鏈接可以被刪除，它們仍然極其麻煩。 \n\n有時，特別是給頁面添加新的網絡鏈接時，本wiki可能需要你回答問題。由於這是一項難以用自動工具完成的任務，它可以允許在大多數真人做出貢獻的同時，阻止大多數垃圾製造者和其他自動攻擊者。 \n\n如果這項措施意外地阻止你進行正常的貢獻，請與[[Special:ListAdmins|網站管理員]]聯繫獲取幫助。 \n\n點擊瀏覽器的“後退”按鈕返回頁面編輯器。",
   "mmixcaptcha-error": "發生了一些問題",
   "mmixcaptcha-retry": "請稍等片刻後再試（點擊此區域可以重試）。",
-  "mmixcaptcha-textplaceholder": "字幕內容",
+  "mmixcaptcha-textplaceholder": "字幕內容（不認識的字符，標點和空格無需輸入）",
   "mmixcaptcha-info": "我們懇請閣下輸入圖片中的字幕內容。"
 }

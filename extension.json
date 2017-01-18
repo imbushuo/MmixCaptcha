@@ -1,5 +1,6 @@
 {
   "name": "Project MMIX Captcha Provider Extension",
+  "descriptionmsg": "mmixcaptcha-desc",
   "version": "1701.117.1735.3610",
   "author": [
     "[https://lmn.cat The Little Moe New LLC]"
