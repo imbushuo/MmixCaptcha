@@ -15,5 +15,6 @@
   "mmixcaptcha-error": "Something happened",
   "mmixcaptcha-retry": "Please try again later (click here to retry).",
   "mmixcaptcha-textplaceholder": "Subtitle content (no blank space or symbols)",
-  "mmixcaptcha-info": "Please input the subtitle text of image."
+  "mmixcaptcha-info": "Please input the subtitle text of image.",
+  "mmixcaptcha-edit-mobile": "To edit this page, please input the subtitle text (no blank space or symbols) of image. ([[Special:Captcha/help|more info]]) "
 }

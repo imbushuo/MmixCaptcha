@@ -15,5 +15,6 @@
   "mmixcaptcha-error": "发生了一些问题",
   "mmixcaptcha-retry": "请稍等片刻后再试（点击此区域可以重试）。",
   "mmixcaptcha-textplaceholder": "字幕内容（不认识的字符、标点和空格无需输入）",
-  "mmixcaptcha-info": "我们恳请阁下输入图片中的字幕内容。"
+  "mmixcaptcha-info": "我们恳请阁下输入图片中的字幕内容。",
+  "mmixcaptcha-edit-mobile": "要编辑该页面，请阁下输入图片中的字幕内容，不认识的字符、标点和空格无需输入。（[[Special:Captcha/help|更多信息]]）"
 }

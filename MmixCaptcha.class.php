@@ -64,7 +64,7 @@ class MmixCaptcha extends SimpleCaptcha {
             $resultArr['captcha']['questionId'] = $captcha->id;
 
             $imageIdEncoded = urlencode($captcha->id);
-            $description = wfMessage( 'mmixcaptcha-edit' )->parse();
+            $description = wfMessage( 'mmixcaptcha-edit-mobile' )->parse();
             $imageUrl = "https://{$wgMmixBackendEndpoint}/image/Retrieval?id={$imageIdEncoded}";
 
             $resultArr['captcha']['question'] = "<p>{$description}</p><img style=\"display: block;\" src=\"{$imageUrl}\" alt=\"MMIX Captcha\" />";
