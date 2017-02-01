@@ -56,7 +56,7 @@ class Connector {
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($curl, CURLOPT_POSTFIELDS, $serializedRep);
         curl_setopt($curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
-        curl_setopt($curl, CURLOPT_TIMEOUT_MS, 500);
+        curl_setopt($curl, CURLOPT_TIMEOUT_MS, 1500);
 
         $result = curl_exec($curl);
         $resultCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
